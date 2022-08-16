@@ -1,3 +1,5 @@
+import { client } from '../libs/client';
+
 export default function Home() {
   return (
     <>
@@ -17,3 +19,12 @@ export default function Home() {
     </>
   )
 }
+export const getServerSideProps = async () => {
+  const data = await client.get({ endpoint: 'blog' });
+
+  return {
+    props: {
+      blog: data.contents,
+    },
+  };
+};
