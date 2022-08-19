@@ -13,10 +13,9 @@ export default function Home({ blog }: Props) {
       <div className="container mx-auto p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
        {blog.map(blog => (
          <div className="rounded overflow-hidden shadow-lg" key={blog.id}>
-
            <div className="px-6 py-4">{blog.title}</div>
            <div className="px-6 py-4">
-             <Link href={`/article/${blog.id}`} passHref>
+             <Link href={`/blog/${blog.id}`} passHref>
                <a>{blog.title}</a>
              </Link>
            </div>
