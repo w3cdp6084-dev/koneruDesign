@@ -6,7 +6,7 @@ export type Blog = {
     revisedAt: string
     title: string
     body: string
-    eye_catch: {
+    thumbnail: {
       url: string
       height: number
       width: number
