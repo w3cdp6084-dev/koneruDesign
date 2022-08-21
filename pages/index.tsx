@@ -15,7 +15,7 @@ export default function Home({ blog }: Props) {
          <div className="rounded overflow-hidden shadow-lg" key={blog.id}>
            <div className="px-6 py-4">{blog.title}</div>
            <div className="px-6 py-4">
-             <Link href={`/blog/${blog.id}`} passHref>
+             <Link href={`/article/${blog.id}`} passHref>
                <a>{blog.title}</a>
              </Link>
            </div>
