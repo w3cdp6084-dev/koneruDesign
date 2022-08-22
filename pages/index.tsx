@@ -9,11 +9,8 @@ type Props = {
 export default function Home({ blog }: Props) {
   return (
     <div>
-      <section>
-        <h1 className="dark:text-white block-title container mx-auto pt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 text-2xl font-bold">
-        Recommend
-        </h1>
-        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5">
+      <section className="mt-20">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
           {blog.map(blog => (
             // eslint-disable-next-line react/jsx-key
             <Link href={`/article/${blog.id}`} passHref>
