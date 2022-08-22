@@ -14,14 +14,20 @@ export default function Home({ blog }: Props) {
           {blog.map(blog => (
             // eslint-disable-next-line react/jsx-key
             <Link href={`/article/${blog.id}`} passHref>
-              <div className="dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg" key={blog.id}>
+              <div className="card p-4 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg" key={blog.id}>
                 <div>
-                <img src={blog.thumbnail.url} alt="thumbnail" />
+                  <img src={blog.thumbnail.url} alt="thumbnail" className='rounded-2xl' />
                 </div>
-                <div className="text-white">
+                <div className="text-white text-xl pt-4 font-bold">
                   <p>{blog.title}</p>
                 </div>
-                <div className='flex justify-between items-center pt-3'>
+                <div>
+                  <div className='text-white pb-6 pt-2 ellipsis' dangerouslySetInnerHTML={{__html: blog.body}}></div>
+                </div>
+                <div>
+                  <p className='text-white pb-6 pt-2'>#{blog.category.name}</p>
+                </div>
+                <div className='pt-2'>
                   <Moment format="YYYY/MM/DD" className='text-xs font-bold text-white'>
                     {blog.publishedAt}
                   </Moment>
