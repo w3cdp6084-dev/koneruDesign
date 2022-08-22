@@ -18,16 +18,16 @@ export default function Home({ blog }: Props) {
                 <div>
                   <img src={blog.thumbnail.url} alt="thumbnail" className='rounded-2xl' />
                 </div>
-                <div className="text-white text-xl pt-4 font-bold">
+                <div className="text-white text-xl mt-4 font-bold">
                   <p>{blog.title}</p>
                 </div>
                 <div>
-                  <div className='text-white pb-6 pt-2 ellipsis' dangerouslySetInnerHTML={{__html: blog.body}}></div>
+                  <div className='text-sm text-white mb-6 mt-2 ellipsis' dangerouslySetInnerHTML={{__html: blog.body}}></div>
                 </div>
-                <div>
-                  <p className='text-white pb-6 pt-2'>#{blog.category.name}</p>
+                <div className='my-6'>
+                  <p className='text-sm text-white py-1 px-2 category'>#{blog.category.name}</p>
                 </div>
-                <div className='pt-2'>
+                <div className='mt-2'>
                   <Moment format="YYYY/MM/DD" className='text-xs font-bold text-white'>
                     {blog.publishedAt}
                   </Moment>

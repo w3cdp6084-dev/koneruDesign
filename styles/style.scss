@@ -29,10 +29,18 @@ body{
     border: 2px solid rgba(49, 57, 73, 0.5);
     box-shadow: -10px -10px 20px rgba(72, 80, 99, 0.26), 10px 10px 20px #262C37;
     border-radius: 12px;
+    height: fit-content;
 }
 .ellipsis{
     width: 94%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.category{
+    background: linear-gradient(45.33deg, #2C3341 15.46%, #313949 72.37%);
+    border: 2px solid rgba(49, 57, 73, 0.5);
+    box-shadow: -10px -10px 20px rgba(72, 80, 99, 0.26), 10px 10px 20px #262C37;
+    border-radius: 8px;
+    width: fit-content;
 }
