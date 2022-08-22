@@ -19,7 +19,7 @@ export default function Home({ blog }: Props) {
             <Link href={`/article/${blog.id}`} passHref>
               <div className="dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg" key={blog.id}>
                 <div>
-                <img className="" src={blog.thumbnail.url} alt="thumbnail" />
+                <img src={blog.thumbnail.url} alt="thumbnail" />
                 </div>
                 <div className="">
                   <p>{blog.title}</p>
