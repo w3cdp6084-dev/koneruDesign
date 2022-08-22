@@ -8,8 +8,8 @@ type Props = {
 };
 export default function Home({ blog }: Props) {
   return (
-    <div>
-      <section className="mt-20">
+    <div className='wrap'>
+      <section className="mt-20 ">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
           {blog.map(blog => (
             // eslint-disable-next-line react/jsx-key
@@ -18,11 +18,11 @@ export default function Home({ blog }: Props) {
                 <div>
                 <img src={blog.thumbnail.url} alt="thumbnail" />
                 </div>
-                <div className="">
+                <div className="text-white">
                   <p>{blog.title}</p>
                 </div>
-                <div className='flex justify-between items-center pt-3 px-3'>
-                  <Moment format="YYYY/MM/DD" className='text-xs font-bold date dark:text-white '>
+                <div className='flex justify-between items-center pt-3'>
+                  <Moment format="YYYY/MM/DD" className='text-xs font-bold text-white'>
                     {blog.publishedAt}
                   </Moment>
                 </div>
