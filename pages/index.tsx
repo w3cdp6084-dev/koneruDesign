@@ -41,7 +41,7 @@ export default function Home({ blog }: Props) {
     )
   }
 export const getServerSideProps = async () => {
-  const data = await client.get({ endpoint: 'blog',queries: { limit: 4, offset: 0}});
+  const data = await client.get({ endpoint: 'blog',queries: { limit: 12, offset: 0}});
   return {
     props: {
       blog: data.contents,
