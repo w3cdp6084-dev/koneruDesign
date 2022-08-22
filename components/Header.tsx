@@ -15,7 +15,7 @@ export default function Header() {
           <a className="tracking-wide mr-5 text-white font-bold">CONTACT</a>
           <form>   
             <div className="relative">
-              <input type="search" id="default-search" className="block p-4 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Test" required/>
+              <input type="search" id="default-search" className="block p-4 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 inputOutline" placeholder="Test" required/>
                 <div className="flex absolute inset-y-0 right-0 items-center pl-3 pointer-events-none searchBtn">
                   <img src="../images/face01.png" alt="icon" width={32} />
                 </div>
