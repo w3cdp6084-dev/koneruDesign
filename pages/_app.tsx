@@ -1,5 +1,6 @@
 import '../styles/globals.scss';
 import '../styles/style.scss';
+import * as React from "react";
 import type { AppProps } from 'next/app';
 import Header from '../components/Header';
 
