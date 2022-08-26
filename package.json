@@ -10,16 +10,12 @@
   },
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.9",
-    "magic-grid": "^3.2.4",
-    "magic-grid-react": "^0.3.1",
     "microcms-js-sdk": "^2.2.1",
     "moment": "^2.29.4",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-magic-grid": "^1.2.1",
-    "react-moment": "^1.1.2",
-    "react-stack-grid": "^0.7.1"
+    "react-moment": "^1.1.2"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.14",
