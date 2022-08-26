@@ -19,6 +19,6 @@
       "@/components/*": ["@components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.scss"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.scss", "libs/test.js"],
   "exclude": ["node_modules"]
 }
