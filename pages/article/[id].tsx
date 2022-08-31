@@ -8,7 +8,7 @@ type Props = {
 
 export default function Article({ blog }: Props) {
   return (
-    <div className="bg-gray-50">
+    <div className="">
       <div className="px-10 py-6 mx-auto">
         <div className="max-w-6xl px-10 py-6 mx-auto bg-gray-50">
           <div className="mt-2">
