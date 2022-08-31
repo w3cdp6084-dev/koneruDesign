@@ -1,6 +1,7 @@
 .main{
     max-width: 80rem;
     margin: 120px auto 0;
+    color: #ffffff;
 }
 .itemWrap{
     display: grid;
@@ -22,4 +23,20 @@
 }
 .aboutDesc{
     text-align: center;
+}
+.imagesOutline{
+    background: linear-gradient(331.93deg, #1D222E 11.88%, #293140 85.18%);
+    mix-blend-mode: normal;
+    box-shadow: -10px -10px 20px rgba(57, 66, 83, 0.35), 10px 10px 20px rgba(24, 28, 39, 0.35);
+    border-radius: 100px;
+    .img{
+        background: linear-gradient(331.93deg, #1D222E 11.88%, #293140 85.18%);
+        box-shadow: -10px -10px 20px rgba(57, 66, 83, 0.35), 10px 10px 20px rgba(24, 28, 39, 0.35);
+        border-radius: 100px;
+        width: 160px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

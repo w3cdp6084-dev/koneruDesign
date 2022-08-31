@@ -5,7 +5,9 @@ export default function About() {
     return (
       <main className={styles.main}>
         <div className={styles.itemWrap}>
-          <Image src="/images/logo.png" width={150} height={150} alt="logo" />
+          <div className={styles.imagesOutline}>
+            <Image src="/images/logo.png" width={140} height={140} alt="logo" className={styles.img} />
+          </div>
           <p className={styles.aboutNickname}>KONEKONE</p>
           <p className={styles.aboutName}>
             Yusuke Mori🐱<br />
