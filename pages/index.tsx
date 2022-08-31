@@ -2,7 +2,7 @@ import { client } from '../libs/client';
 import type { Blog } from '../types/blog';
 import Link from 'next/link';
 import Moment from 'react-moment'
-import Image from 'next/image'
+
 type Props = {
   blog: Array<Blog>;
 };
