@@ -10,9 +10,15 @@ export default function Header() {
           </a>
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a className="tracking-wide mr-5 text-white font-bold">HOME</a>
-          <a className="tracking-wide mr-5 text-white font-bold">ABOUT</a>
-          <a className="tracking-wide mr-5 text-white font-bold">CONTACT</a>
+          <Link href="/">
+            <a className="tracking-wide mr-5 text-white font-bold">HOME</a>
+          </Link>
+          <Link href="/about">
+            <a className="tracking-wide mr-5 text-white font-bold">ABOUT</a>
+          </Link>
+          <Link href="/">
+            <a className="tracking-wide mr-5 text-white font-bold">CONTACT</a>
+          </Link>
           <form>   
             <div className="relative">
               <input type="search" id="default-search" className="block p-4 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 inputOutline" placeholder="Test" required/>

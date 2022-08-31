@@ -2,6 +2,7 @@ import { client } from '../libs/client';
 import type { Blog } from '../types/blog';
 import Link from 'next/link';
 import Moment from 'react-moment'
+import Image from 'next/image'
 type Props = {
   blog: Array<Blog>;
 };
@@ -15,7 +16,7 @@ export default function Home({ blog }: Props) {
             <Link href={`/article/${blog.id}`} passHref>
               <div className="card p-4 rounded-lg bg-gray-500 p-4 break-inside" key={blog.id}>
                 <div>
-                  <img src={blog.thumbnail.url} alt="thumbnail" className='rounded-2xl' />
+                  <img src={blog.thumbnail.url} alt="thumbnail" className='rounded-2xl' layout='fill'/>
                 </div>
                 <div className="text-white text-xl mt-4 font-bold">
                   <p>{blog.title}</p>
