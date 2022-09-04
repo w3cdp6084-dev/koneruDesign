@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import * as Icon from 'react-feather';
+import styles from '../styles/components/ReturnTopButton.module.scss';
 const ReturnTopButton = () => {
   const [isButtonActive, setIsButtonActive] = useState(false)
 
@@ -30,17 +31,17 @@ const ReturnTopButton = () => {
 
   const normalStyle = {
     opacity: 0,
-    transition: '0.5s',
+    transition: '1s',
     pointerEvents: 'none'
   }
   const activeStyle = {
     opacity: 1,
-    transition: '0.5s'
+    transition: '1s'
   }
   const style = isButtonActive ? activeStyle : normalStyle
 
   return (
-    <button style={style} onClick={returnTop} className="primary top-button">
+    <button style={style} onClick={returnTop} className={styles.topButton}>
         <Icon.ArrowUp className='text-white' />
     </button>
   )

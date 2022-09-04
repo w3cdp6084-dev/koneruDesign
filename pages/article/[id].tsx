@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import type { Blog } from '../../types/blog';
 import { client } from '../../libs/client';
-
+import ReturnTopButton from '../../components/ReturnTopButton';
 type Props = {
     blog: Blog;
 };
@@ -27,6 +27,7 @@ export default function Article({ blog }: Props) {
             <div className="text-2xl text-gray-700 mt-4 rounded" dangerouslySetInnerHTML={{__html: blog.body}}></div>
           </div>
         </div>
+        <ReturnTopButton />
       </div>
     </div>
   );
