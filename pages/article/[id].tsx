@@ -3,6 +3,7 @@ import type { Blog } from '../../types/blog';
 import { client } from '../../libs/client';
 import Moment from 'react-moment'
 import ReturnTopButton from '../../components/ReturnTopButton';
+import BreadCrumbs from "../../components/breadcrumbs";
 type Props = {
     blog: Blog;
 };
@@ -10,9 +11,22 @@ type Props = {
 export default function Article({ blog }: Props) {
   return (
     <div className="w-full mx-auto">
-      <div className="px-10 py-6 mx-auto">
+      <div className="px-10 mx-auto">
         <div className="max-w-6xl px-10 py-6 mx-auto">
-          <div className='my-6 w-10/12 mx-auto flex justify-start items-center'>
+          <div className='w-10/12 mx-auto'>
+            <BreadCrumbs 
+              blog={[
+                {
+                  string: "トップページ",
+                  path: "/",
+                },
+                {
+                  string: blog.title,
+                }
+              ]}
+            />
+          </div>
+          <div className='mt-20 mb-6 w-10/12 mx-auto flex justify-start items-center'>
             <Moment format="YYYY/MM/DD" className='text-xs font-bold date mr-10 text-white'>
               {blog.publishedAt}
             </Moment>
