@@ -1,12 +1,14 @@
 import { client } from '../libs/client';
 import type { Blog } from '../types/blog';
+import type { Total } from '../types/totalCount';
 import Link from 'next/link';
 import Moment from 'react-moment'
 import { Pagination } from '../components/Pagination';
 type Props = {
   blog: Array<Blog>;
+  totalCount:Array<Total>;
 };
-export default function Home({ blog,totalCount }: Props) {
+export default function Home({ blog, totalCount }: Props) {
   return (
     <div className='wrap'>
       <section className="mt-20">
@@ -42,7 +44,7 @@ export default function Home({ blog,totalCount }: Props) {
     )
   }
 export const getServerSideProps = async () => {
-  const data = await client.get({ endpoint: 'blog',queries: { limit: 9, offset: 0}});
+  const data = await client.get({ endpoint: "blog", queries: { limit: 10, offset: 2, } });
   return {
     props: {
       blog: data.contents,
