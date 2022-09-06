@@ -1,6 +1,5 @@
 import { client } from '../libs/client';
 import type { Blog } from '../types/blog';
-import type { Total } from '../types/totalCount';
 import Link from 'next/link';
 import Moment from 'react-moment'
 import { Pagination } from '../components/Pagination';
