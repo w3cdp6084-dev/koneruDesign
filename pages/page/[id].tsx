@@ -7,11 +7,11 @@ import { BLOG_PER_PAGE } from '../settings/siteSettings';
 import type { Blog } from '../../types/blog';
 type Props = {
   blog: Array<Blog>;
-  totalCount: number
+  totalCount: number;
+  currentPage: number;
 };
 
-
-export default function Home({ blog, totalCount }: Props) {
+export default function Home({ blog, totalCount, currentPage }: Props) {
   return (
     <div className='wrap'>
       <section className="mt-20">
@@ -41,7 +41,7 @@ export default function Home({ blog, totalCount }: Props) {
            </Link>
           ))}
         </div>
-        <Pagination totalCount={totalCount} />
+        <Pagination totalCount={totalCount} currentPage={currentPage} />
       </section>
     </div>
     )
@@ -69,6 +69,7 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async ({ pa
       props: {
           blog: data.contents,
           totalCount: data.totalCount,
+          currentPage: pageId
       },
   };
 };
