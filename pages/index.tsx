@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Moment from 'react-moment'
 import { Pagination } from '../components/Pagination';
 import { BLOG_PER_PAGE } from './settings/siteSettings';
+import { Search } from '../components/Search'
+
 type Props = {
   blog: Array<Blog>;
   totalCount: number;
@@ -11,7 +13,9 @@ type Props = {
 
 export default function Home({ blog, totalCount }: Props) {
   return (
+    
     <div className='wrap'>
+      <Search />
       <section className="mt-20">
         <div className="mx-auto masonry sm:masonry-sm md:masonry-md">
           {blog.map(blog => (

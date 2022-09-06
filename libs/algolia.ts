@@ -1,24 +1,24 @@
-// src/lib/algolia.ts
-
-import removeMd from 'remove-markdown';
+import removeMd from 'remove-markdown'
+import algoliasearch from 'algoliasearch'
+import { getAllContents } from './getAllContents'
+import { Blog } from '../types/blog'
 
 export const generateIndex = async (): Promise<void> => {
-  // ローカル or ヘッドレス CMS 経由で記事の情報を取得
-  // 各自で実装が必要
-  const posts = async getPosts(...);
+  const applicationId = process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID ?? ''
+  const adminApiKey = process.env.ALGOLIA_ADMIN_API_KEY ?? ''
+  const posts = await getAllContents()
 
-  // posts のプロパティ例
-  //   id, title, description, content
-  const objects = posts.map((post) => {
+  const objects = posts.map((blog: Blog) => {
     return {
-      objectID: post.id,
-      url: `https://fwywd.com/${post.id}`,
-      title: post.title,
-      description: post.description,
-      content: removeMd(post.content),  // markdown => plaintext
-    };
-  });
+      objectID: blog.id,
+      url: `/blog/${blog.id}`,
+      title: blog.title,
+      content: removeMd(blog.body),
+    }
+  })
 
-  // 内容の確認
-  console.log(objects)
-};
+  const client = algoliasearch(applicationId, adminApiKey)
+  const index = client.initIndex('koneru')
+  process.env.NODE_ENV === 'production' &&
+    (await index.saveObjects(objects, { autoGenerateObjectIDIfNotExist: true }))
+}
