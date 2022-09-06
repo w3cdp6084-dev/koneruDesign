@@ -6,7 +6,7 @@ import { Pagination } from '../components/Pagination';
 import { BLOG_PER_PAGE } from './settings/siteSettings';
 type Props = {
   blog: Array<Blog>;
-  totalCount: number
+  totalCount: number;
 };
 
 export default function Home({ blog, totalCount }: Props) {
