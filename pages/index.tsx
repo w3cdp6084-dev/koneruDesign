@@ -4,10 +4,12 @@ import type { Total } from '../types/totalCount';
 import Link from 'next/link';
 import Moment from 'react-moment'
 import { Pagination } from '../components/Pagination';
+import { BLOG_PER_PAGE } from './settings/siteSettings';
 type Props = {
   blog: Array<Blog>;
-  totalCount:Array<Total>;
+  totalCount: number
 };
+
 export default function Home({ blog, totalCount }: Props) {
   return (
     <div className='wrap'>
@@ -44,7 +46,7 @@ export default function Home({ blog, totalCount }: Props) {
     )
   }
 export const getServerSideProps = async () => {
-  const data = await client.get({ endpoint: "blog", queries: { limit: 10, offset: 2, } });
+  const data = await client.get({ endpoint: "blog", queries: { limit: BLOG_PER_PAGE } });
   return {
     props: {
       blog: data.contents,
