@@ -11,10 +11,8 @@ type Props = {
 };
 
 export default function Home({ blog, totalCount }: Props) {
-  return (
-    
+  return ( 
     <div className='wrap'>
-
       <section className="mt-20">
         <div className="mx-auto masonry sm:masonry-sm md:masonry-md">
           {blog.map(blog => (
