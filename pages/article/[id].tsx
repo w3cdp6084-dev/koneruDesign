@@ -40,12 +40,7 @@ export default function Article({ blog }: Props) {
           <div className="mt-2 w-10/12 mx-auto">
             <div className="text-sm leading-relaxed tracking-wider text-white mt-4 rounded" dangerouslySetInnerHTML={{__html: blog.body}}></div>
           </div>
-          <div className='mx-auto w-3/5'>
-            <img
-              className="my-10 rounded-2xl object-cover shadow-sm"
-              src={blog.thumbnail.url}
-            />
-          </div>
+
         </div>
         <ReturnTopButton />
       </div>
