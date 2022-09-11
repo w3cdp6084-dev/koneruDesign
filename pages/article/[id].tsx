@@ -2,13 +2,16 @@ import { GetServerSideProps } from 'next';
 import type { Blog } from '../../types/blog';
 import { client } from '../../libs/client';
 import Moment from 'react-moment'
+import { renderToc } from '../../libs/render-toc'; 
 import ReturnTopButton from '../../components/ReturnTopButton';
 import BreadCrumbs from "../../components/breadcrumbs";
+import { TableOfContents } from '../../components/TableOfContent';
 type Props = {
     blog: Blog;
 };
 
 export default function Article({ blog }: Props) {
+  const toc = renderToc(blog.body);
   return (
     <div className="w-full mx-auto">
       <div className="px-10 mx-auto">
@@ -37,10 +40,14 @@ export default function Article({ blog }: Props) {
               {blog.title}
             </div>
           </div>
+          <div>
+            {blog.toc_visible && (
+            <TableOfContents toc={toc} />
+            )}
+          </div>
           <div className="mt-2 w-10/12 mx-auto">
             <div className="text-sm leading-relaxed tracking-wider text-white mt-4 rounded" dangerouslySetInnerHTML={{__html: blog.body}}></div>
           </div>
-
         </div>
         <ReturnTopButton />
       </div>
