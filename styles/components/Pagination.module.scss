@@ -1,0 +1,19 @@
+.pagination{
+    background: linear-gradient(331.93deg, #1D222E 11.88%, #293140 85.18%);
+    mix-blend-mode: normal;
+    box-shadow: -10px -10px 20px rgba(57, 66, 83, 0.35), 10px 10px 20px rgba(24, 28, 39, 0.35);
+    border-radius: 60px;
+    width: 7.5rem;
+    position: fixed;
+    left: 50%;
+    top: 93%;
+    display: flex;
+    .paginationNumber{
+        color: #ffffff;
+        font-size: 0.75rem;
+        padding: 0.75rem;
+    }
+}
+.current{
+    font-weight: bold;
+}
