@@ -40,7 +40,7 @@ export default function Article({ blog }: Props) {
               {blog.title}
             </div>
           </div>
-          <div>
+          <div className='mt-2 w-10/12 mx-auto'>
             {blog.toc_visible && (
             <TableOfContents toc={toc} />
             )}
