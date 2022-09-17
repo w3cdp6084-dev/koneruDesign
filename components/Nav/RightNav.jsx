@@ -3,15 +3,16 @@ import styled from 'styled-components';
 
 const Ul = styled.ul`
   list-style: none;
-  display: flex;
-  flex-flow: row nowrap;
 
+  flex-flow: row nowrap;
+  display:none; 
   li {
     padding: 18px 10px;
     color: #fff;
   }
 
   @media screen and (max-width: 768px) {
+    display: flex;
     flex-flow: column nowrap;
     background-color: #0D2538;
     position: fixed;
@@ -22,7 +23,7 @@ const Ul = styled.ul`
     width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
-    z-index:100;
+    z-index:10;
     li {
       color: #fff;
     }
