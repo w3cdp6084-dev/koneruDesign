@@ -15,6 +15,7 @@
     "@types/remove-markdown": "^0.3.1",
     "algoliasearch": "^4.14.2",
     "axios": "^0.27.2",
+    "babel-plugin-styled-components": "^2.0.7",
     "cheerio": "^1.0.0-rc.12",
     "iconoir-react": "^5.2.0",
     "microcms-js-sdk": "^2.2.1",

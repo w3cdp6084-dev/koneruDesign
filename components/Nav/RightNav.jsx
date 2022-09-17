@@ -22,7 +22,7 @@ const Ul = styled.ul`
     width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
-
+    z-index:100;
     li {
       color: #fff;
     }
@@ -32,11 +32,9 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li>Home</li>
-      <li>About Us</li>
-      <li>Contact Us</li>
-      <li>Sign In</li>
-      <li>Sign Up</li>
+      <li>HOME</li>
+      <li>ABOUT</li>
+      <li>CONTACT</li>
     </Ul>
   )
 }
