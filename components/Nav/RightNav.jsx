@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const Ul = styled.ul`
   list-style: none;
-
   flex-flow: row nowrap;
   display:none; 
   li {
