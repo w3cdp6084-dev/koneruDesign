@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Link from 'next/link'
 const Ul = styled.ul`
   list-style: none;
   flex-flow: row nowrap;
@@ -32,9 +32,21 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li>HOME</li>
-      <li>ABOUT</li>
-      <li>CONTACT</li>
+      <li>
+        <Link href="/">
+            <a>HOME</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/about">
+            <a>ABOUT</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/contact">
+            <a>CONTACT</a>
+        </Link>
+      </li>
     </Ul>
   )
 }
