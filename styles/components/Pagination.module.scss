@@ -8,6 +8,7 @@
     left: 50%;
     top: 93%;
     display: flex;
+    transform: translateY(-50%) translateX(-50%);
     .paginationNumber{
         color: #ffffff;
         font-size: 0.75rem;
