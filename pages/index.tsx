@@ -29,20 +29,21 @@ export default function Home({ blog, totalCount, category }: Props) {
                 <div>
                   <div className='text-sm text-white mb-6 mt-2 ellipsis' dangerouslySetInnerHTML={{__html: blog.body}}></div>
                 </div>
-                <div className='my-6'>
+                <div className='flex items-baseline justify-between '>
                   {category.map((category) => (
-                    <li key={category.id} className="category">
+                    <li key={category.id} className="text-sm text-white py-1 px-2 category">
                       <Link href={`/category/${category.id}`}>
-                        <a>{blog.category.name}</a>
+                        <a>#{blog.category.name}</a>
                       </Link>
                     </li>
                   ))}
+                  <div className='mt-2'>
+                    <Moment format="YYYY/MM/DD" className='text-xs font-bold text-white'>
+                      {blog.publishedAt}
+                    </Moment>
+                  </div>
                 </div>
-                <div className='mt-2'>
-                  <Moment format="YYYY/MM/DD" className='text-xs font-bold text-white'>
-                    {blog.publishedAt}
-                  </Moment>
-                </div>
+
               </div>
            </Link>
           ))}
