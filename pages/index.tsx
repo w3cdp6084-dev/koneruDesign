@@ -8,9 +8,10 @@ import { BLOG_PER_PAGE } from './settings/siteSettings';
 type Props = {
   blog: Array<Blog>;
   totalCount: number;
+  category: string;
 };
 
-export default function Home({ blog, totalCount }: Props) {
+export default function Home({ blog, totalCount, category }: Props) {
   return ( 
     <div className='wrap'>
       <section className="mt-20">
@@ -29,7 +30,13 @@ export default function Home({ blog, totalCount }: Props) {
                   <div className='text-sm text-white mb-6 mt-2 ellipsis' dangerouslySetInnerHTML={{__html: blog.body}}></div>
                 </div>
                 <div className='my-6'>
-                  <p className='text-sm text-white py-1 px-2 category'>#{blog.category.name}</p>
+                {category.map((category) => (
+          <li key={category.id}>
+            <Link href={`/category/${category.id}`}>
+              <a>{category.name}</a>
+            </Link>
+          </li>
+        ))}
                 </div>
                 <div className='mt-2'>
                   <Moment format="YYYY/MM/DD" className='text-xs font-bold text-white'>
@@ -47,10 +54,12 @@ export default function Home({ blog, totalCount }: Props) {
   }
 export const getServerSideProps = async () => {
   const data = await client.get({ endpoint: "blog", queries: { limit: BLOG_PER_PAGE } });
+  const categoryData = await client.get({ endpoint: "categories" });
   return {
     props: {
       blog: data.contents,
-      totalCount: data.totalCount
+      totalCount: data.totalCount,
+      category: categoryData.contents,
     },
   };
 };
