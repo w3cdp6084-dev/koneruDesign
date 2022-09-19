@@ -9,9 +9,10 @@ type Props = {
   blog: Array<Blog>;
   totalCount: number;
   currentPage: number;
+  category: string;
 };
 
-export default function Home({ blog, totalCount, currentPage }: Props) {
+export default function Home({ blog, totalCount, currentPage, category }: Props) {
   return (
     <div className='wrap'>
       <section className="mt-20">
@@ -29,13 +30,19 @@ export default function Home({ blog, totalCount, currentPage }: Props) {
                 <div>
                   <div className='text-sm text-white mb-6 mt-2 ellipsis' dangerouslySetInnerHTML={{__html: blog.body}}></div>
                 </div>
-                <div className='my-6'>
-                  <p className='text-sm text-white py-1 px-2 category'>#{blog.category.name}</p>
-                </div>
-                <div className='mt-2'>
-                  <Moment format="YYYY/MM/DD" className='text-xs font-bold text-white'>
-                    {blog.publishedAt}
-                  </Moment>
+                <div className='flex items-baseline justify-between'>
+                  {category.map((category) => (
+                    <li key={category.id} className="text-sm text-white py-1 px-2 category">
+                      <Link href={`/category/${category.id}`}>
+                        <a>#{blog.category.name}</a>
+                      </Link>
+                    </li>
+                  ))}
+                  <div className='mt-2'>
+                    <Moment format="YYYY/MM/DD" className='text-xs font-bold text-white'>
+                      {blog.publishedAt}
+                    </Moment>
+                  </div>
                 </div>
               </div>
            </Link>
@@ -58,6 +65,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props, { id: string }> = async ({ params }) => {
   if (!params) throw new Error("Error Page Number Not Found🐱");
   const pageId = Number(params.id);
+  const categoryData = await client.get({ endpoint: "categories",queries: { limit: 1 } });
   const data = await client.getList({
       endpoint: "blog",
       queries: {
@@ -69,7 +77,8 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async ({ pa
       props: {
           blog: data.contents,
           totalCount: data.totalCount,
-          currentPage: pageId
+          currentPage: pageId,
+          category: categoryData.contents,
       },
   };
 };
