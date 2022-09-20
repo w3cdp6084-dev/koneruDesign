@@ -34,7 +34,7 @@ export default function Home({ blog, totalCount, currentPage, category }: Props)
                   {category.map((category) => (
                     <li key={category.id} className="text-sm text-white py-1 px-2 category">
                       <Link href={`/category/${category.id}`}>
-                        <a>#{blog.category.name}</a>
+                        <a>#{category.name}</a>
                       </Link>
                     </li>
                   ))}

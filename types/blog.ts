@@ -13,4 +13,5 @@ export type Blog = {
     }
     tag: string;
     toc_visible: string;
+    category: string;
   }
