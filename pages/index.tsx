@@ -56,7 +56,7 @@ export default function Home({ blog, totalCount, category }: Props) {
   }
 export const getServerSideProps = async () => {
   const data = await client.get({ endpoint: "blog", queries: { limit: BLOG_PER_PAGE } });
-  const categoryData = await client.get({ endpoint: "categories",queries: { limit: 0 } });
+  const categoryData = await client.get({ endpoint: "categories"});
   return {
     props: {
       blog: data.contents,
