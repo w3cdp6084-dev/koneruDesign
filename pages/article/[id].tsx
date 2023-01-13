@@ -34,7 +34,7 @@ export default function Article({ blog,category }: Props) {
             <Moment format="YYYY/MM/DD" className='text-xs font-bold date mr-10 text-white'>
               {blog.publishedAt}
             </Moment>
-            <p className='text-sm text-white py-1 px-2 category'>#{category.name}</p>
+            <p className='text-sm text-white py-1 px-2 category'>#{blog.category.name}</p>
           </div>
           <div className="mt-2 w-10/12 mx-auto">
             <div className="tracking-wider sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-white">
@@ -63,10 +63,13 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
     endpoint: 'blog',
     contentId: idExceptArray,
   });
-
+  const categoryData = await client.get({
+     endpoint: "categories" 
+    });
   return {
     props: {
         blog: data,
+        category: categoryData.contents,
     },
   };
 };
